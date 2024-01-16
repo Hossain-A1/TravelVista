@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import SearchBar from "../SearchBar";
+import { ModeToggle } from "../../components/Theme-toggle";
+import NavMenu from "../NavMenu";
 const Navber = () => {
   const { userId } = useAuth();
   const router = useRouter();
@@ -34,7 +36,9 @@ const Navber = () => {
           </div>
           <SearchBar />
           <div className='flex gap-3 items-center'>
-            <div>Theme</div>
+            <div><ModeToggle/>
+            <NavMenu/>
+            </div>
             <UserButton afterSignOutUrl='/' />
 
             {!userId && (
