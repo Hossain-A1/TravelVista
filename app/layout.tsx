@@ -4,8 +4,9 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Navber from "@/components/shared/Navber";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import Container from "@/components/Container";
+import { Toaster } from "react-hot-toast";
+const inter = Inter({ subsets: ["latin"],weight:['100','200','300','400','500','600','700','800','900']});
 
 export const metadata: Metadata = {
   title: "TravelVista",
@@ -19,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang='en'>
+    <html lang='en'>
+      <ClerkProvider>
         <body className={inter.className}>
           <ThemeProvider
             attribute='class'
@@ -31,11 +32,14 @@ export default function RootLayout({
             <main className='flex flex-col min-h-screen bg-secondary'>
               <Navber />
 
-              <section className='flex-grow'>{children}</section>
+              <section className='flex-grow'>
+                <Toaster />
+                <Container>{children}</Container>
+              </section>
             </main>
           </ThemeProvider>
         </body>
-      </html>
-    </ClerkProvider>
+      </ClerkProvider>
+    </html>
   );
 }

@@ -22,6 +22,7 @@ model Hotel {
   locationDescription String
   gym                 Boolean   @default(false)
   spa                 Boolean   @default(false)
+  bar                 Boolean   @default(false)
   laundry             Boolean   @default(false)
   restaurant          Boolean   @default(false)
   shopping            Boolean   @default(false)

@@ -1,8 +1,10 @@
-import { Button } from "@/components/ui/button"
+import HotelForm from "@/components/hotel/HotelForm"
 
 const HomePage = () => {
   return (
-    <div><Button variant={'destructive'}>click me</Button></div>
+    <div>
+<HotelForm />
+    </div>
   )
 }
 
